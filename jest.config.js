@@ -1,4 +1,5 @@
+const pkg = require('./package.json');
 module.exports = {
-  name: 'verdaccio-<%= name %>',
+  name: pkg.name,
   preset: 'ts-jest'
 };
