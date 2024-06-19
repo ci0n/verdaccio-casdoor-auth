@@ -18,9 +18,6 @@ auth:
     appName: ...
     certificate: |
       -----BEGIN CERTIFICATE-----
-      MIIE3TCCAsWgAwIBAgIDAeJAMA0GCSqGSIb3DQEBCwUAMCgxDjAMBgNVBAoTBWFk
       ... YOUR CERTIFICATE HERE ...
-      NBEp2SysZilZ8SY/1+hpoDqJV2JGv0rSGWhPtfMd/0qlHH+JdC7MHSeQRW0jfm/0
-      Hw==
       -----END CERTIFICATE-----
 ```

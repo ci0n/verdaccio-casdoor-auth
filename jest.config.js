@@ -1,4 +1,4 @@
 module.exports = {
   name: 'verdaccio-<%= name %>',
-  preset: 'ts-jest',
+  preset: 'ts-jest'
 };

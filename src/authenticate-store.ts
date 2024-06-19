@@ -1,18 +1,16 @@
 import NodeCache from 'node-cache';
 
-import Crypto, { scryptSync } from 'crypto';
+import Crypto from 'crypto';
 
 export class AuthenticateStore {
-
   private storage: NodeCache;
 
   constructor() {
     this.storage = new NodeCache({
       stdTTL: 300,
-      useClones: false,
-    })
+      useClones: false
+    });
   }
-
 
   public findUser(username: string, password: string) {
     const user = this.storage.get<User>(AuthenticateStore.generateKeyHash(username, password));
@@ -22,9 +20,8 @@ export class AuthenticateStore {
   public storeUser(username: string, password: string, user: User) {
     const key = AuthenticateStore.generateKeyHash(username, password);
     const success = this.storage.set(key, user);
-    return success
+    return success;
   }
-
 
   private static generateKeyHash(username: string, password: string) {
     const sha = Crypto.createHash('sha256');
@@ -32,7 +29,6 @@ export class AuthenticateStore {
     return sha.digest('hex');
   }
 }
-
 
 export class User {
   public readonly access_token: string;
